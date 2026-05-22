@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodTunes · Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/auth.css"/>
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+
+      <div class="auth-logo">
+        <div class="logo-mark">〜</div>
+        <div>
+          <span class="logo-name">MoodTunes</span>
+          <span class="logo-sub">AI · Emotion · Music</span>
+        </div>
+      </div>
+
+      <h1 class="auth-title">Welcome Back</h1>
+      <p class="auth-desc">Login to discover music that matches your mood in real-time</p>
+
+      <div class="alert alert-error"   id="errBox"  style="display:none"></div>
+      <div class="alert alert-success" id="okBox"   style="display:none"></div>
+
+      <div class="field">
+        <label class="field-label">Username</label>
+        <div class="field-wrap">
+          <span class="field-icon">👤</span>
+          <input id="username" class="field-input" type="text" placeholder="Your username" autocomplete="username"/>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Password</label>
+        <div class="field-wrap">
+          <span class="field-icon">🔒</span>
+          <input id="password" class="field-input" type="password" placeholder="Your password" autocomplete="current-password"/>
+          <button class="eye-btn" type="button" onclick="toggleEye('password',this)">👁</button>
+        </div>
+      </div>
+
+      <button class="btn-auth" id="loginBtn" onclick="doLogin()">
+        <span class="btn-shine"></span>
+        <span class="btn-txt">Login to MoodTunes</span>
+      </button>
+
+      <div class="auth-divider"><span>discover your mood</span></div>
+      <div class="auth-emotions">🎵 😄 😢 😠 😐 😲 💕 🔥 🙏</div>
+
+      <p class="auth-switch">
+        New here? <a href="/register" class="auth-link">Create a free account →</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    async function doLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const btn      = document.getElementById('loginBtn');
+      hideAlerts();
+
+      if (!username || !password) { showErr('Please fill in all fields'); return; }
+
+      btn.disabled = true;
+      btn.querySelector('.btn-txt').textContent = 'Logging in…';
+
+      try {
+        const res  = await fetch('/api/login', {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          showOk('Welcome back! Redirecting… 🎵');
+          setTimeout(() => window.location.href = '/', 900);
+        } else {
+          showErr(data.error || 'Login failed');
+          btn.disabled = false;
+          btn.querySelector('.btn-txt').textContent = 'Login to MoodTunes';
+        }
+      } catch(e) {
+        showErr('Server error — is Flask running?');
+        btn.disabled = false;
+        btn.querySelector('.btn-txt').textContent = 'Login to MoodTunes';
+      }
+    }
+
+    function toggleEye(id, btn) {
+      const el = document.getElementById(id);
+      el.type  = el.type === 'password' ? 'text' : 'password';
+      btn.textContent = el.type === 'password' ? '👁' : '🙈';
+    }
+
+    function showErr(msg) { const el = document.getElementById('errBox'); el.textContent = msg; el.style.display = 'block'; }
+    function showOk(msg)  { const el = document.getElementById('okBox');  el.textContent = msg; el.style.display = 'block'; }
+    function hideAlerts() { document.getElementById('errBox').style.display = 'none'; document.getElementById('okBox').style.display = 'none'; }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+  </script>
+</body>
+</html>

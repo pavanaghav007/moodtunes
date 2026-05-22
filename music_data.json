@@ -1,0 +1,102 @@
+{
+  "happy": [
+    { "title": "Badtameez Dil", "artist": "Pritam ft. Benny Dayal", "language": "Hindi", "url": "https://www.youtube.com/watch?v=II2EO3Nw4m0", "platform": "YouTube" },
+    { "title": "Gallan Goodiyaan", "artist": "Yashita Sharma", "language": "Hindi", "url": "https://www.youtube.com/watch?v=M3UA9gBEkZE", "platform": "YouTube" },
+    { "title": "Happy", "artist": "Pharrell Williams", "language": "English", "url": "https://www.youtube.com/watch?v=ZbZSe6N_BXs", "platform": "YouTube" },
+    { "title": "Hauli Hauli", "artist": "Neha Kakkar", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=pS0pGPZnFBk", "platform": "YouTube" },
+    { "title": "Kala Chashma", "artist": "Amar Arshi", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=nV-YgaF0RY4", "platform": "YouTube" },
+    { "title": "Can't Stop the Feeling", "artist": "Justin Timberlake", "language": "English", "url": "https://www.youtube.com/watch?v=ru0K8uYEZWw", "platform": "YouTube" },
+    { "title": "Bom Diggy Diggy", "artist": "Zack Knight", "language": "Hindi", "url": "https://www.youtube.com/watch?v=hgVAIw_LjmA", "platform": "YouTube" },
+    { "title": "Shake It Off", "artist": "Taylor Swift", "language": "English", "url": "https://www.youtube.com/watch?v=nfWlot6h_JM", "platform": "YouTube" }
+  ],
+  "sad": [
+    { "title": "Tum Hi Ho", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=Umqb9KENgmk", "platform": "YouTube" },
+    { "title": "Channa Mereya", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=256pk_K1OaI", "platform": "YouTube" },
+    { "title": "Someone Like You", "artist": "Adele", "language": "English", "url": "https://www.youtube.com/watch?v=hLQl3WQQoQ0", "platform": "YouTube" },
+    { "title": "Fer Milangi", "artist": "Amrinder Gill", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=mW_6abv9sTI", "platform": "YouTube" },
+    { "title": "Kal Ho Na Ho", "artist": "Sonu Nigam", "language": "Hindi", "url": "https://www.youtube.com/watch?v=WtC_-QL5_Eg", "platform": "YouTube" },
+    { "title": "Fix You", "artist": "Coldplay", "language": "English", "url": "https://www.youtube.com/watch?v=k4V3Mo61fJM", "platform": "YouTube" },
+    { "title": "The Night We Met", "artist": "Lord Huron", "language": "English", "url": "https://www.youtube.com/watch?v=KtlgYxa6BMU", "platform": "YouTube" },
+    { "title": "Sajda", "artist": "KK", "language": "Hindi", "url": "https://www.youtube.com/watch?v=EGp9EjNy_QU", "platform": "YouTube" }
+  ],
+  "romantic": [
+    { "title": "Tere Bina", "artist": "AR Rahman", "language": "Hindi", "url": "https://www.youtube.com/watch?v=3SlCOoJTzqY", "platform": "YouTube" },
+    { "title": "Raabta", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=_nCfBIAICMg", "platform": "YouTube" },
+    { "title": "Perfect", "artist": "Ed Sheeran", "language": "English", "url": "https://www.youtube.com/watch?v=2Vv-BfVoq4g", "platform": "YouTube" },
+    { "title": "Laung Laachi", "artist": "Mannat Noor", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=h2mFB7MTFKM", "platform": "YouTube" },
+    { "title": "Suit Suit", "artist": "Guru Randhawa", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=FqKEbGWEWy8", "platform": "YouTube" },
+    { "title": "All of Me", "artist": "John Legend", "language": "English", "url": "https://www.youtube.com/watch?v=450p7goxZqg", "platform": "YouTube" },
+    { "title": "Teri Mitti", "artist": "B Praak", "language": "Hindi", "url": "https://www.youtube.com/watch?v=XNYD3ED-bMQ", "platform": "YouTube" },
+    { "title": "Thinking Out Loud", "artist": "Ed Sheeran", "language": "English", "url": "https://www.youtube.com/watch?v=lp-EO5I60KA", "platform": "YouTube" }
+  ],
+  "angry": [
+    { "title": "Zinda", "artist": "Siddharth Mahadevan", "language": "Hindi", "url": "https://www.youtube.com/watch?v=c_7Z8Z3VSmA", "platform": "YouTube" },
+    { "title": "Numb", "artist": "Linkin Park", "language": "English", "url": "https://www.youtube.com/watch?v=kXYiU_JCYtU", "platform": "YouTube" },
+    { "title": "GOAT", "artist": "Diljit Dosanjh", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=Hn0S2uXzFkY", "platform": "YouTube" },
+    { "title": "Lalkaar", "artist": "Diljit Dosanjh", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=0YI7HJeHYKM", "platform": "YouTube" },
+    { "title": "In The End", "artist": "Linkin Park", "language": "English", "url": "https://www.youtube.com/watch?v=eVTXPUF4Oz4", "platform": "YouTube" },
+    { "title": "Deva Deva", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=UPgFkfYxwmQ", "platform": "YouTube" },
+    { "title": "IDGAF", "artist": "Dua Lipa", "language": "English", "url": "https://www.youtube.com/watch?v=Hm4adIEOsYw", "platform": "YouTube" },
+    { "title": "Killing in the Name", "artist": "Rage Against the Machine", "language": "English", "url": "https://www.youtube.com/watch?v=bWXazVhlyxQ", "platform": "YouTube" }
+  ],
+  "neutral": [
+    { "title": "Iktara", "artist": "Kavita Seth", "language": "Hindi", "url": "https://www.youtube.com/watch?v=YqKnHFsEVhw", "platform": "YouTube" },
+    { "title": "Kabira", "artist": "Rekha Bhardwaj", "language": "Hindi", "url": "https://www.youtube.com/watch?v=5vJ_NqPNtEQ", "platform": "YouTube" },
+    { "title": "Weightless", "artist": "Marconi Union", "language": "English", "url": "https://www.youtube.com/watch?v=UfcAVejslrU", "platform": "YouTube" },
+    { "title": "Ve Maahi", "artist": "Arijit Singh", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=LGOwhmBb0lU", "platform": "YouTube" },
+    { "title": "Ik Vaari Aa", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=HwYIFBSXFGM", "platform": "YouTube" },
+    { "title": "Lofi Hip Hop Radio", "artist": "Chillhop Music", "language": "English", "url": "https://www.youtube.com/watch?v=5qap5aO4i9A", "platform": "YouTube" },
+    { "title": "Clair de Lune", "artist": "Debussy", "language": "English", "url": "https://www.youtube.com/watch?v=CvFH_6DNRCY", "platform": "YouTube" },
+    { "title": "Pasoori", "artist": "Ali Sethi", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=Vy1JwiXHwM4", "platform": "YouTube" }
+  ],
+  "surprised": [
+    { "title": "Chaiyya Chaiyya", "artist": "Sukhwinder Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=3yybEBBWfIo", "platform": "YouTube" },
+    { "title": "Bohemian Rhapsody", "artist": "Queen", "language": "English", "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ", "platform": "YouTube" },
+    { "title": "Wakhra Swag", "artist": "Navv Inder", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=FzDl2t1FTRA", "platform": "YouTube" },
+    { "title": "Jai Ho", "artist": "AR Rahman", "language": "Hindi", "url": "https://www.youtube.com/watch?v=Iy-QRlL3Y_E", "platform": "YouTube" },
+    { "title": "Mr. Brightside", "artist": "The Killers", "language": "English", "url": "https://www.youtube.com/watch?v=gGdGFtwCNBE", "platform": "YouTube" },
+    { "title": "Mauja Hi Mauja", "artist": "Mika Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=TqfJSMuKAw8", "platform": "YouTube" },
+    { "title": "Africa", "artist": "Toto", "language": "English", "url": "https://www.youtube.com/watch?v=FTQbiNvZqaY", "platform": "YouTube" },
+    { "title": "Don't Stop Me Now", "artist": "Queen", "language": "English", "url": "https://www.youtube.com/watch?v=HgzGwKwLmgM", "platform": "YouTube" }
+  ],
+  "passionate": [
+    { "title": "Rang De Basanti", "artist": "AR Rahman", "language": "Hindi", "url": "https://www.youtube.com/watch?v=O8rXzxVOytI", "platform": "YouTube" },
+    { "title": "Kar Har Maidaan Fateh", "artist": "Sukhwinder Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=sNC31o7SBSQ", "platform": "YouTube" },
+    { "title": "Eye of the Tiger", "artist": "Survivor", "language": "English", "url": "https://www.youtube.com/watch?v=btPJPFnesV4", "platform": "YouTube" },
+    { "title": "Believer", "artist": "Imagine Dragons", "language": "English", "url": "https://www.youtube.com/watch?v=7wtfhZwyrcc", "platform": "YouTube" },
+    { "title": "Jatt Da Muqabala", "artist": "Sidhu Moosewala", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=CIBMThZEKpU", "platform": "YouTube" },
+    { "title": "Kesariya", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=BddP6PYo2gs", "platform": "YouTube" },
+    { "title": "Thunder", "artist": "Imagine Dragons", "language": "English", "url": "https://www.youtube.com/watch?v=fKopy74weus", "platform": "YouTube" },
+    { "title": "Nach Punjaban", "artist": "Punjabi Beat", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=3l6FUqnhkGg", "platform": "YouTube" }
+  ],
+  "fearful": [
+    { "title": "Sound of Silence", "artist": "Simon and Garfunkel", "language": "English", "url": "https://www.youtube.com/watch?v=4zLfCnGVeL4", "platform": "YouTube" },
+    { "title": "Tere Liye", "artist": "Atif Aslam", "language": "Hindi", "url": "https://www.youtube.com/watch?v=3FVSdJFfTGs", "platform": "YouTube" },
+    { "title": "Ranjha", "artist": "B Praak", "language": "Punjabi", "url": "https://www.youtube.com/watch?v=hiFEKVGRIGE", "platform": "YouTube" },
+    { "title": "Main Tenu Samjhawan", "artist": "Atif Aslam", "language": "Hindi", "url": "https://www.youtube.com/watch?v=p8IiGXSFq_Q", "platform": "YouTube" },
+    { "title": "Mad World", "artist": "Gary Jules", "language": "English", "url": "https://www.youtube.com/watch?v=4N3N1MlvVc4", "platform": "YouTube" },
+    { "title": "Chale Chalo", "artist": "AR Rahman", "language": "Hindi", "url": "https://www.youtube.com/watch?v=5r3-PX7RQPI", "platform": "YouTube" },
+    { "title": "Losing My Religion", "artist": "R.E.M.", "language": "English", "url": "https://www.youtube.com/watch?v=xwtdhWltSIg", "platform": "YouTube" },
+    { "title": "Dil Dhadakne Do", "artist": "Farhan Akhtar", "language": "Hindi", "url": "https://www.youtube.com/watch?v=YAtjcVzDJbw", "platform": "YouTube" }
+  ],
+  "spiritual": [
+    { "title": "Om Namah Shivaya", "artist": "Hariharan", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=BaQaJELMKpQ", "platform": "YouTube" },
+    { "title": "Gayatri Mantra", "artist": "Anuradha Paudwal", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=YO3lksXq2pI", "platform": "YouTube" },
+    { "title": "Waheguru Simran", "artist": "Bhai Gurpreet Singh", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=PoDi_OQ-DGA", "platform": "YouTube" },
+    { "title": "Ik Onkar", "artist": "Harshdeep Kaur", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=7YCGblFtOMs", "platform": "YouTube" },
+    { "title": "Maha Mrityunjaya Mantra", "artist": "SP Balasubrahmanyam", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=OE3IGpKohtQ", "platform": "YouTube" },
+    { "title": "Allah Ke Bande", "artist": "Kailash Kher", "language": "Hindi", "url": "https://www.youtube.com/watch?v=v6SH0KPNR2E", "platform": "YouTube" },
+    { "title": "Shree Hanuman Chalisa", "artist": "Hariharan", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=tgSmSALN6wA", "platform": "YouTube" },
+    { "title": "Dama Dam Mast Qalandar", "artist": "Abida Parveen", "language": "Spiritual", "url": "https://www.youtube.com/watch?v=ln8LrN-VNhA", "platform": "YouTube" }
+  ],
+  "disgusted": [
+    { "title": "Creep", "artist": "Radiohead", "language": "English", "url": "https://www.youtube.com/watch?v=XFkzRNyygfk", "platform": "YouTube" },
+    { "title": "Judaai", "artist": "Rekha Bhardwaj", "language": "Hindi", "url": "https://www.youtube.com/watch?v=A9bqGCEBgHI", "platform": "YouTube" },
+    { "title": "Boulevard of Broken Dreams", "artist": "Green Day", "language": "English", "url": "https://www.youtube.com/watch?v=Yk8F8o-KXRc", "platform": "YouTube" },
+    { "title": "Bohot Pyar Karte Hain", "artist": "Kumar Sanu", "language": "Hindi", "url": "https://www.youtube.com/watch?v=dCEzTxSaBAI", "platform": "YouTube" },
+    { "title": "Hurt", "artist": "Johnny Cash", "language": "English", "url": "https://www.youtube.com/watch?v=8AHCfZTRGiI", "platform": "YouTube" },
+    { "title": "Ye Jo Halka Halka Suroor", "artist": "Nusrat Fateh Ali Khan", "language": "Hindi", "url": "https://www.youtube.com/watch?v=pPNQMBDaLKA", "platform": "YouTube" },
+    { "title": "Tera Yaar Hoon Main", "artist": "Arijit Singh", "language": "Hindi", "url": "https://www.youtube.com/watch?v=R5BpS3MkLMQ", "platform": "YouTube" },
+    { "title": "Mad World", "artist": "Gary Jules", "language": "English", "url": "https://www.youtube.com/watch?v=4N3N1MlvVc4", "platform": "YouTube" }
+  ]
+}

@@ -1,0 +1,9 @@
+flask>=2.3,<4.0
+flask-login>=0.6
+flask-sqlalchemy>=3.0
+werkzeug>=2.3
+numpy>=1.23,<2.0
+opencv-python>=4.8
+tensorflow>=2.12,<2.17
+reportlab>=4.0
+gunicorn>=21.0

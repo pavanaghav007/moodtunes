@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodTunes · Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-inner">
+      <div class="logo">
+        <div class="logo-mark">〜</div>
+        <div>
+          <div class="logo-name">MoodTunes</div>
+          <div class="logo-sub">AI · Emotion · Music</div>
+        </div>
+      </div>
+      <div class="hdr-center">
+        <div class="mood-chips" id="moodChips">
+          <span class="mc active" data-key="happy">😄 Happy</span>
+          <span class="mc" data-key="sad">😢 Sad</span>
+          <span class="mc" data-key="romantic">💕 Romantic</span>
+          <span class="mc" data-key="angry">😠 Angry</span>
+          <span class="mc" data-key="passionate">🔥 Passionate</span>
+          <span class="mc" data-key="spiritual">🙏 Spiritual</span>
+        </div>
+      </div>
+      <div class="hdr-right">
+        <div class="user-pill">
+          <span class="user-avatar">{{ user.username[0].upper() }}</span>
+          <span class="user-name">{{ user.username }}</span>
+        </div>
+        <div class="live-chip"><span class="live-dot"></span>Live</div>
+        <button class="icon-btn" id="muteBtn"  onclick="toggleMute()">🔊</button>
+        <button class="icon-btn" id="autoBtn"  onclick="toggleAuto()">⟳ Auto</button>
+        <a href="/logout" class="icon-btn">⏻ Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN DASHBOARD -->
+  <main class="dash">
+
+    <!-- COL 1: Camera -->
+    <div class="col col-cam">
+      <div class="card">
+        <div class="card-hdr">
+          <span class="card-label">◎ Camera Feed</span>
+          <span class="chip" id="statusChip">Ready</span>
+        </div>
+
+        <div class="vframe">
+          <span class="vcorner tl"></span><span class="vcorner tr"></span>
+          <span class="vcorner bl"></span><span class="vcorner br"></span>
+          <video id="video" autoplay playsinline></video>
+          <img   id="snapshot" alt=""/>
+          <canvas id="canvas" style="display:none"></canvas>
+          <div class="scan-ov" id="scanOv">
+            <div class="scan-line"></div>
+            <div class="scan-txt"><span class="sdot"></span>Analysing face…</div>
+          </div>
+          <div class="face-tag" id="faceTag" style="display:none">
+            <span id="faceTagEmoji">😄</span>
+            <span id="faceTagLabel">Happy</span>
+          </div>
+        </div>
+
+        <div class="ctrl-row">
+          <button class="btn-primary" id="detectBtn" onclick="detectEmotion()">
+            <span class="btn-shine"></span>◉ Detect My Emotion
+          </button>
+          <button class="btn-sq" id="saveBtn" onclick="saveSnapshot()" style="display:none" title="Save photo">📸</button>
+        </div>
+
+        <p class="cam-err" id="camErr" style="display:none">⚠ Camera denied — allow permission in browser</p>
+
+        <div class="auto-row" id="autoRow" style="display:none">
+          <span class="al">Auto detect every</span>
+          <select id="autoSel" class="sel">
+            <option value="3000">3 sec</option>
+            <option value="5000" selected>5 sec</option>
+            <option value="10000">10 sec</option>
+          </select>
+          <span class="auto-running">● Running</span>
+        </div>
+
+        <!-- Language filter -->
+        <div class="lang-filter">
+          <span class="lf-label">Songs:</span>
+          <button class="lf-btn active" data-lang="all"      onclick="setLang(this)">All</button>
+          <button class="lf-btn"        data-lang="Hindi"    onclick="setLang(this)">Hindi</button>
+          <button class="lf-btn"        data-lang="Punjabi"  onclick="setLang(this)">Punjabi</button>
+          <button class="lf-btn"        data-lang="English"  onclick="setLang(this)">English</button>
+          <button class="lf-btn"        data-lang="Spiritual" onclick="setLang(this)">Spiritual</button>
+        </div>
+      </div>
+
+      <!-- Stats card -->
+      <div class="card">
+        <div class="card-hdr">
+          <span class="card-label">📊 My Stats</span>
+          <div style="display:flex;gap:.5rem">
+            <button class="link-btn" onclick="exportPDF()">📄 PDF</button>
+            <button class="link-btn" onclick="clearHistory()">Clear</button>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box"><div class="stat-val" id="stTotal">0</div><div class="stat-lbl">Detections</div></div>
+          <div class="stat-box"><div class="stat-val" id="stDominant">—</div><div class="stat-lbl">Top Mood</div></div>
+          <div class="stat-box"><div class="stat-val" id="stConf">—</div><div class="stat-lbl">Avg Confidence</div></div>
+          <div class="stat-box"><div class="stat-val">72</div><div class="stat-lbl">Songs Library</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 2: Emotion + Chart -->
+    <div class="col col-mid">
+
+      <div class="card emotion-card" id="emotionCard">
+        <div class="emo-top">
+          <div class="emo-ring" id="emoRing">
+            <span class="emo-emoji" id="emoEmoji">?</span>
+          </div>
+          <div class="emo-info">
+            <div class="emo-eyebrow">Detected Emotion</div>
+            <div class="emo-name"  id="emoName">Waiting…</div>
+            <div class="conf-row">
+              <div class="conf-track"><div class="conf-bar" id="confBar" style="width:0%"></div></div>
+              <span class="conf-pct" id="confPct">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- All-emotion breakdown bars -->
+        <div class="breakdown">
+          <div class="bk-title">Confidence breakdown</div>
+          <div id="bkBars"></div>
+        </div>
+
+        <!-- Mood selector pills -->
+        <div class="mood-pills">
+          <div class="mp" data-e="Happy">😄 Happy</div>
+          <div class="mp" data-e="Sad">😢 Sad</div>
+          <div class="mp" data-e="Angry">😠 Angry</div>
+          <div class="mp" data-e="Neutral">😐 Neutral</div>
+          <div class="mp" data-e="Surprise">😲 Surprised</div>
+          <div class="mp" data-e="Fear">😨 Fearful</div>
+          <div class="mp" data-e="Disgust">🤢 Disgusted</div>
+        </div>
+      </div>
+
+      <!-- History chart -->
+      <div class="card">
+        <div class="card-hdr">
+          <span class="card-label">📈 Emotion Timeline</span>
+          <span class="chip" id="histCount">0 records</span>
+        </div>
+        <div class="chart-wrap"><canvas id="histChart"></canvas></div>
+        <p class="chart-empty" id="chartEmpty">Detect emotions to see your mood trend here</p>
+      </div>
+    </div>
+
+    <!-- COL 3: Songs + Log -->
+    <div class="col col-right">
+
+      <div class="card songs-card">
+        <div class="card-hdr">
+          <span class="card-label">♫ Recommended Tracks</span>
+          <span class="chip" id="songCount"></span>
+        </div>
+        <p class="empty-msg" id="songsEmpty">Detect your emotion to unlock your playlist ✦</p>
+        <ul class="track-list" id="trackList"></ul>
+      </div>
+
+      <div class="card">
+        <div class="card-hdr">
+          <span class="card-label">🕑 Detection Log</span>
+          <button class="link-btn" onclick="clearHistory()">Clear</button>
+        </div>
+        <p class="empty-msg" id="logEmpty">No detections yet this session</p>
+        <ul class="log-list" id="logList"></ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="ftr">
+    MoodTunes v3 &nbsp;·&nbsp; Flask + TensorFlow + OpenCV &nbsp;·&nbsp; FER2013 &nbsp;·&nbsp;
+    Hindi · Punjabi · English · Spiritual
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
